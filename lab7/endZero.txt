@@ -1,0 +1,40 @@
+int n;
+    std::cout<<"For which number would you like to find the Fibonacci sequece and compare speed?"<<std::endl;
+    std::cin>>n;
+    std::cout<<'\n';
+    
+    std::cout<<"Displaying results for the non recursive fibonacci function"<<std::endl;
+    time_t t;
+    t = clock();
+    FibonacciNR fib1(n);
+    fib1.PrintFibonacci();
+    std::cout << "It took " << (clock() - t) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
+    
+    std::cout<<"Displaying results for the recursive fibonacci function"<<std::endl;
+
+    t = time(0);
+    FibonacciR fib2(n);
+    fib2.PrintFibonacci();
+    std::cout << "It took " << (clock() - t) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << std::endl;
+    std::cout<<'\n';
+    
+    int fac;
+    std::cout<<"what factorial would you like to calcuate and measure run speed?"<<std::endl;
+    std::cin>>fac;
+    
+    
+    std::cout<<"\nDisplaying results for the non tail recursive factorial function"<<std::endl;
+    
+    t = time(0);
+    rfactorial(fac);
+    std::cout << "It took " << (clock() - t) / (double)(CLOCKS_PER_SEC / 1000) << " ms";
+    std::cout<<"for the factorial of "<< fac<<std::endl;
+    
+    std::cout<<"Displaying results for the tail recursive factorial function"<<std::endl;
+    t = time(0);
+    factorial(fac);
+    std::cout << "It took " << (clock() - t) / (double)(CLOCKS_PER_SEC / 1000) << " ms";
+    std::cout<<"for the factorial of "<< fac<<std::endl;
+
+
+    return 0;
